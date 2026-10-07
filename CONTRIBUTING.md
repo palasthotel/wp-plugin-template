@@ -177,8 +177,8 @@ the required files, and checks the version carriers agree.
 
 Once, when a new repository is created from the template:
 
-- [ ] `public/readme.txt`: description, tags, FAQ, `Contributors:` — `palasthotel` and
-      `janaeggebrecht` stay, add further wordpress.org user names
+- [ ] `public/readme.txt`: description, tags, FAQ, `Contributors:` — `palasthotel` stays,
+       add further wordpress.org user names
 - [ ] `Requires at least` / `Requires PHP` in the plugin header, `readme.txt` and
       `php-versions` in `pr.yml` agree
 - [ ] `.release-please-manifest.json`, `package.json`, header and `Stable tag:` carry the
