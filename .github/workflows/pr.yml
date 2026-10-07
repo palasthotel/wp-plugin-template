@@ -1,0 +1,24 @@
+name: PR
+
+on:
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  checks:
+    uses: palasthotel/github-workflows/.github/workflows/wp-plugin-pr.yml@v1
+    with:
+      slug: my-plugin
+      dev-plugin-name: My Plugin - DEV
+      # starts with Requires PHP from public/readme.txt
+      php-versions: '["8.1", "8.2", "8.3", "8.4"]'
+      # everything Assets.php enqueues, so a renamed file fails here instead of 404ing
+      required-files: |
+        assets/admin.js
+        assets/admin.css
+        languages/my-plugin.pot
+        languages/my-plugin-de_DE.mo

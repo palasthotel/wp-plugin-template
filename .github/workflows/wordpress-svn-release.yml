@@ -1,0 +1,27 @@
+name: Build and release to WordPress.org
+
+on:
+  push:
+    tags:
+      - "v*"
+  # Re-run a failed deploy from a branch that has the fix - see
+  # https://github.com/palasthotel/github-workflows/blob/main/docs/wp-plugin.md
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Version to deploy, without the leading v (e.g. 1.0.1)"
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    # The template itself is never released; harmless in a repository created from it.
+    if: github.repository != 'palasthotel/wp-plugin-template'
+    uses: palasthotel/github-workflows/.github/workflows/wp-plugin-svn-deploy.yml@v1
+    with:
+      slug: my-plugin
+      version: ${{ github.event.inputs.version }}
+    secrets: inherit

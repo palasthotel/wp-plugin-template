@@ -1,0 +1,19 @@
+name: Update plugin version
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  sync-version:
+    # The template itself is never released; harmless in a repository created from it.
+    if: github.repository != 'palasthotel/wp-plugin-template'
+    uses: palasthotel/github-workflows/.github/workflows/wp-plugin-sync-version.yml@v1
+    with:
+      app-id: ${{ vars.RELEASE_BOT_APP_ID }}
+    secrets: inherit

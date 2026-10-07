@@ -1,0 +1,19 @@
+{
+	"name": "@palasthotel/my-plugin",
+	"version": "0.1.0",
+	"private": true,
+	"description": "One sentence on what the plugin does.",
+	"license": "GPL-3.0-or-later",
+	"author": {
+		"name": "Palasthotel",
+		"email": "webmaster@palasthotel.de",
+		"url": "https://palasthotel.de"
+	},
+	"repository": "git+https://github.com/palasthotel/wp-my-plugin.git",
+	"bugs": {
+		"url": "https://github.com/palasthotel/wp-my-plugin/issues"
+	},
+	"scripts": {
+		"pack": "SLUG=my-plugin bash ../github-workflows/wp-plugin/bin/pack.sh"
+	}
+}
