@@ -3,7 +3,7 @@ Contributors: palasthotel, janaeggebrecht
 Donate link: https://palasthotel.de/
 Tags: tag-one, tag-two
 Requires at least: 6.4
-Tested up to: 7.1.2
+Tested up to: 7.1
 Requires PHP: 8.1
 Stable tag: 0.1.0
 License: GPL-3.0-or-later

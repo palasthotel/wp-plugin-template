@@ -2,6 +2,8 @@
 
 use Palasthotel\WordPress\MyPlugin\Plugin;
 
+defined( 'ABSPATH' ) || exit;
+
 /**
  * Functions for themes and other plugins. Keep this the only public API besides the
  * hooks in Plugin, so the classes can change without breaking anyone.

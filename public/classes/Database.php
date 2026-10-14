@@ -20,8 +20,12 @@ class Database extends Components\Database {
 	 * @return array[]
 	 */
 	public function getItems( int $postId ): array {
-		return $this->wpdb->get_results(
-			$this->wpdb->prepare( "SELECT id, post_id, value, created FROM $this->table WHERE post_id = %d ORDER BY id", $postId ),
+		// A local $wpdb, because the sniffs only recognise $wpdb->prepare() as prepared.
+		// %i quotes the table name as an identifier (WordPress 6.2+).
+		$wpdb = $this->wpdb;
+
+		return $wpdb->get_results(
+			$wpdb->prepare( "SELECT id, post_id, value, created FROM %i WHERE post_id = %d ORDER BY id", $this->table, $postId ),
 			ARRAY_A
 		);
 	}
