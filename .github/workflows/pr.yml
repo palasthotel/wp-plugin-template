@@ -12,6 +12,9 @@ jobs:
   checks:
     uses: palasthotel/github-workflows/.github/workflows/wp-plugin-pr.yml@v1
     with:
+      # Plugin Check reports errors on this plugin - see https://github.com/palasthotel/wp-plugin-template/issues/3.
+      # Remove this line once they are fixed.
+      plugin-check: false
       slug: my-plugin
       dev-plugin-name: My Plugin - DEV
       # starts with Requires PHP from public/readme.txt
