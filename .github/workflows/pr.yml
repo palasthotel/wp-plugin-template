@@ -15,7 +15,7 @@ jobs:
       slug: my-plugin
       dev-plugin-name: My Plugin - DEV
       # starts with Requires PHP from public/readme.txt
-      php-versions: '["8.1", "8.2", "8.3", "8.4"]'
+      php-versions: '["8.1", "8.2", "8.3", "8.4", "8.5"]'
       # everything Assets.php enqueues, so a renamed file fails here instead of 404ing
       required-files: |
         assets/admin.js
